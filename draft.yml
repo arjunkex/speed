@@ -1,0 +1,13 @@
+models:
+  DomainRequest:
+    tenant_id: string foreign unique
+    requested_domain: string
+    status: integer
+    modified_by: id foreign nullable
+    modified_at: timestamp nullable
+    relationships:
+      belongsTo: Tenant
+
+controllers:
+  DomainRequest:
+    resource: api
